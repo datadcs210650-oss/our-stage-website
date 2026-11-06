@@ -36,6 +36,39 @@ content:
       - { name: contactEmail, label: Email liên hệ, type: string }
       - { name: contactNote, label: Thông báo liên hệ, type: text }
       - { name: footerNote, label: Dòng chân trang, type: string }
+      - { name: brandSubtitle, label: brandSubtitle, type: string }
+      - { name: headerEdition, label: headerEdition, type: string }
+      - { name: marqueeText, label: marqueeText, type: string }
+      - { name: experienceKicker, label: experienceKicker, type: string }
+      - { name: experienceGiantWord, label: experienceGiantWord, type: string }
+      - { name: experienceFooter, label: experienceFooter, type: string }
+      - { name: experienceAct1Top, label: experienceAct1Top, type: string }
+      - { name: experienceAct1Bottom, label: experienceAct1Bottom, type: string }
+      - { name: experienceAct2Top, label: experienceAct2Top, type: string }
+      - { name: experienceAct2Bottom, label: experienceAct2Bottom, type: string }
+      - { name: experienceAct3Top, label: experienceAct3Top, type: string }
+      - { name: experienceAct3Bottom, label: experienceAct3Bottom, type: string }
+      - { name: missionEyebrow, label: missionEyebrow, type: string }
+      - { name: programEyebrow, label: programEyebrow, type: string }
+      - { name: cultureEyebrow, label: cultureEyebrow, type: string }
+      - { name: cultureTitleLine1, label: cultureTitleLine1, type: string }
+      - { name: cultureTitleLine2, label: cultureTitleLine2, type: string }
+      - { name: cultureDescription, label: cultureDescription, type: text }
+      - { name: joinEyebrow, label: joinEyebrow, type: string }
+      - { name: footerSloganLine1, label: footerSloganLine1, type: string }
+      - { name: footerSloganLine2, label: footerSloganLine2, type: string }
+      - name: customSections
+        label: Mục bổ sung trên website
+        type: object
+        list: true
+        fields:
+          - { name: eyebrow, label: Nhãn mục, type: string }
+          - { name: title, label: Tiêu đề mục, type: string }
+          - { name: body, label: Nội dung, type: text }
+          - { name: image, label: Hình ảnh, type: image }
+          - { name: theme, label: Màu nền (dark/light), type: string }
+          - { name: buttonLabel, label: Tên nút liên kết, type: string }
+          - { name: buttonUrl, label: Đường dẫn nút liên kết, type: string }
   - name: events
     label: Sự kiện & hoạt động
     type: collection
@@ -44,7 +77,7 @@ content:
     filename: '{primary}.json'
     view:
       primary: title
-      fields: [title, category, order]
+      fields: [title, category, pinned, eventDate, order]
       sort: [order, title]
       default:
         sort: order
@@ -72,4 +105,5 @@ content:
             - { name: gold, label: Vàng ánh đèn }
             - { name: violet, label: Tím huyền bí }
             - { name: blue, label: Xanh ánh sáng }
-      - { name: order, label: Thứ tự hiển thị, type: number }
+      - { name: pinned, label: Ghim lên đầu danh sách, type: boolean }
+      - { name: order, label: Thứ tự phụ khi trùng ngày, type: number }

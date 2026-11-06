@@ -9,26 +9,28 @@
   <meta property="og:description" content="{{SITE_DESCRIPTION}}">
   <meta property="og:type" content="website">
   <title>{{SITE_TITLE}}</title>
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="{{FAVICON_LINK}}" type="{{FAVICON_TYPE}}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/style.css">
   <link rel="stylesheet" href="/assets/motion.css">
   <link rel="stylesheet" href="/assets/gallery.css">
+  <link rel="stylesheet" href="/assets/cinematic.css">
   <script src="/assets/app.js" defer></script>
   <script src="/assets/motion.js" defer></script>
   <script src="/assets/gallery.js" defer></script>
+  <script src="/assets/cinematic.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#noi-dung">Bỏ qua điều hướng</a>
   <div class="scroll-meter" aria-hidden="true"></div>
   <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="Our Stage – về đầu trang">{{BRAND_MARK}}<span class="brand-words"><b>OUR<span>STAGE</span></b><small>THEATRE & STORIES</small></span></a>
+    <a class="brand" href="#top" aria-label="Our Stage – về đầu trang">{{BRAND_MARK}}<span class="brand-words"><b>OUR<span>STAGE</span></b><small>{{BRAND_SUBTITLE}}</small></span></a>
     <nav id="main-nav" class="main-nav" aria-label="Điều hướng chính">
-      <a href="#gioi-thieu">Giới thiệu</a><a href="#hoat-dong">Hoạt động</a><a href="#con-nguoi">Con người OSC</a><a href="#tham-gia">Tham gia</a>
+      <a href="#gioi-thieu">Giới thiệu</a><a href="#hoat-dong">Hoạt động</a><a href="#con-nguoi">Con người OSC</a>{{CUSTOM_NAV}}<a href="#tham-gia">Tham gia</a>
     </nav>
-    <div class="header-right"><span class="header-edition">2026 <span class="mini-dot"></span> OUR STAGE</span><button id="menu-toggle" class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Mở menu"><span></span><span></span></button></div>
+    <div class="header-right"><span class="header-edition">{{HEADER_EDITION}} <span class="mini-dot"></span> OUR STAGE</span><button id="menu-toggle" class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Mở menu"><span></span><span></span></button></div>
   </header>
   <main id="noi-dung">
     <section class="hero" aria-labelledby="hero-title">
@@ -46,28 +48,29 @@
       <div class="hero-scroll" aria-hidden="true"><span>SCROLL TO EXPLORE</span><span class="scroll-track"></span><span>01 / 05</span></div>
       <div class="hero-serial" aria-hidden="true">OSC — ART IN MOTION</div>
     </section>
-    <div class="marquee" aria-hidden="true"><div class="marquee-inner">OUR STAGE <span>✳</span> BEYOND THE SPOTLIGHT <span>✳</span> OUR STAGE <span>✳</span> BEYOND THE SPOTLIGHT <span>✳</span></div></div>
+    <div class="marquee" aria-hidden="true"><div class="marquee-inner">{{MARQUEE_TEXT}} <span>✳</span> {{MARQUEE_TEXT}} <span>✳</span> {{MARQUEE_TEXT}} <span>✳</span> <span>✳</span></div></div>
     <section id="gioi-thieu" class="about-section section-padding" aria-labelledby="about-heading">
       <div class="wrap about-grid"><div class="section-side"><p class="eyebrow accent">{{ABOUT_EYEBROW}}</p><span class="section-index">AN INTRODUCTION</span></div><div class="about-main reveal"><h2 id="about-heading" class="display-heading">{{ABOUT_TITLE}}</h2><p class="body-lead">{{ABOUT_DESCRIPTION}}</p><div class="about-rule"></div><div class="about-quote"><span class="quote-star">✳</span><blockquote>“{{ABOUT_QUOTE}}”</blockquote></div></div></div>
     </section>
     <section class="experience" aria-labelledby="experience-heading">
       <div class="experience-sticky">
-        <div class="experience-bg" aria-hidden="true"><div class="experience-ring ring-one"></div><div class="experience-ring ring-two"></div><div class="experience-center-glow"></div><span class="giant-word">STAGE</span></div>
-        <div class="experience-content wrap"><p class="eyebrow experience-kicker"><span class="mini-dot"></span> KHÔNG CHỈ LÀ MỘT CÂU LẠC BỘ</p>
-          <div class="experience-texts"><h2 id="experience-heading" class="experience-title is-current" data-experience="0">MỘT NƠI<br><em>THUỘC VỀ.</em></h2><h2 class="experience-title" data-experience="1">MỘT NƠI<br><em>ĐƯỢC THỬ.</em></h2><h2 class="experience-title" data-experience="2">MỘT NƠI<br><em>TỎA SÁNG.</em></h2></div>
-          <div class="experience-footer"><span>THREE ACTS. ONE STAGE.</span><div class="experience-pagination" aria-label="Tiến trình câu chuyện"><span class="is-current"></span><span></span><span></span></div><span>OUR STAGE CLUB</span></div>
+        <div class="experience-bg" aria-hidden="true"><div class="experience-ring ring-one"></div><div class="experience-ring ring-two"></div><div class="experience-center-glow"></div><span class="giant-word">{{EXPERIENCE_GIANT_WORD}}</span></div>
+        <div class="experience-content wrap"><p class="eyebrow experience-kicker"><span class="mini-dot"></span> {{EXPERIENCE_KICKER}}</p>
+          <div class="experience-texts"><h2 id="experience-heading" class="experience-title is-current" data-experience="0">{{EXPERIENCE_1A}}<br><em>{{EXPERIENCE_1B}}</em></h2><h2 class="experience-title" data-experience="1">{{EXPERIENCE_2A}}<br><em>{{EXPERIENCE_2B}}</em></h2><h2 class="experience-title" data-experience="2">{{EXPERIENCE_3A}}<br><em>{{EXPERIENCE_3B}}</em></h2></div>
+          <div class="experience-footer"><span>{{EXPERIENCE_FOOTER}}</span><div class="experience-pagination" aria-label="Tiến trình câu chuyện"><span class="is-current"></span><span></span><span></span></div><span>OUR STAGE CLUB</span></div>
         </div>
       </div>
     </section>
     <section id="con-nguoi" class="manifesto-section section-padding" aria-labelledby="mission-heading">
-      <div class="wrap manifesto-wrap"><div class="manifesto-shape" aria-hidden="true">✳</div><p class="eyebrow accent">02 / TINH THẦN OUR STAGE</p><h2 id="mission-heading" class="display-heading reveal">{{MISSION_TITLE}}</h2><div class="manifesto-bottom"><span class="decorative-cross" aria-hidden="true">✳</span><p class="body-lead reveal">{{MISSION_DESCRIPTION}}</p></div></div>
+      <div class="wrap manifesto-wrap"><div class="manifesto-shape" aria-hidden="true">✳</div><p class="eyebrow accent">{{MISSION_EYEBROW}}</p><h2 id="mission-heading" class="display-heading reveal">{{MISSION_TITLE}}</h2><div class="manifesto-bottom"><span class="decorative-cross" aria-hidden="true">✳</span><p class="body-lead reveal">{{MISSION_DESCRIPTION}}</p></div></div>
     </section>
     <section id="hoat-dong" class="program-section section-padding" aria-labelledby="program-heading">
-      <div class="wrap"><div class="section-header"><div><p class="eyebrow accent">03 / THE HIGHLIGHTS</p><h2 id="program-heading" class="display-heading reveal">{{PROGRAM_TITLE}}</h2></div><p class="section-summary">{{PROGRAM_DESCRIPTION}}</p></div><div class="show-grid">{{EVENT_CARDS}}</div><p class="show-note"><span>✳</span> Mỗi sự kiện là một chương mới trong câu chuyện chung của chúng mình.</p></div>
+      <div class="wrap"><div class="section-header"><div><p class="eyebrow accent">{{PROGRAM_EYEBROW}}</p><h2 id="program-heading" class="display-heading reveal">{{PROGRAM_TITLE}}</h2></div><p class="section-summary">{{PROGRAM_DESCRIPTION}}</p></div><div class="show-grid">{{EVENT_CARDS}}</div><p class="show-note"><span>✳</span> Mỗi sự kiện là một chương mới trong câu chuyện chung của chúng mình.</p></div>
     </section>
-    <section class="culture-section" aria-labelledby="culture-heading"><div class="wrap culture-grid"><div class="culture-heading"><p class="eyebrow accent">04 / BEHIND THE CURTAIN</p><h2 id="culture-heading" class="display-heading">ÁNH ĐÈN TẮT.<br><em>ĐAM MÊ VẪN SÁNG.</em></h2><p>Không chỉ có khoảnh khắc trên sân khấu. Còn có những buổi tập, những lần cùng sửa một cảnh diễn và những người luôn ở bên nhau phía sau cánh gà.</p></div><div class="culture-visual" aria-hidden="true"><div class="culture-orbit orbit-one"></div><div class="culture-orbit orbit-two"></div><div class="culture-center">OSC</div><div class="culture-label label-one">ACT</div><div class="culture-label label-two">CREATE</div><div class="culture-label label-three">BELONG</div></div></div></section>
-    <section id="tham-gia" class="join-section" aria-labelledby="join-heading"><div class="join-rays" aria-hidden="true"></div><div class="wrap join-inner"><p class="eyebrow">05 / YOUR NEXT CHAPTER</p><h2 id="join-heading" class="join-title reveal">{{JOIN_TITLE}}</h2><p class="join-desc">{{JOIN_DESCRIPTION}}</p>{{JOIN_LINK}}<span class="join-star" aria-hidden="true">✳</span></div></section>
-    <footer id="lien-he" class="footer"><div class="wrap"><div class="footer-head"><a class="footer-brand" href="#top">OUR<span>STAGE.</span></a><p>CHÚNG TA CÙNG KỂ<br>NHỮNG CÂU CHUYỆN.</p></div><div class="footer-links"><div class="footer-meta"><span>OUR STAGE CLUB</span><span>FPT UNIVERSITY · CẦN THƠ</span></div><div class="footer-contact">{{CONTACT_LINKS}}</div></div><div class="footer-base"><span>© <span id="year">2026</span> OUR STAGE CLUB</span><span>{{FOOTER_NOTE}}</span><a href="#top">LÊN ĐẦU TRANG ↑</a></div></div></footer>
+    <section class="culture-section" aria-labelledby="culture-heading"><div class="wrap culture-grid"><div class="culture-heading"><p class="eyebrow accent">{{CULTURE_EYEBROW}}</p><h2 id="culture-heading" class="display-heading">{{CULTURE_1}}<br><em>{{CULTURE_2}}</em></h2><p>{{CULTURE_DESCRIPTION}}</p></div><div class="culture-visual" aria-hidden="true"><div class="culture-orbit orbit-one"></div><div class="culture-orbit orbit-two"></div><div class="culture-center">OSC</div><div class="culture-label label-one">ACT</div><div class="culture-label label-two">CREATE</div><div class="culture-label label-three">BELONG</div></div></div></section>
+    {{CUSTOM_SECTIONS}}
+    <section id="tham-gia" class="join-section" aria-labelledby="join-heading"><div class="join-rays" aria-hidden="true"></div><div class="wrap join-inner"><p class="eyebrow">{{JOIN_EYEBROW}}</p><h2 id="join-heading" class="join-title reveal">{{JOIN_TITLE}}</h2><p class="join-desc">{{JOIN_DESCRIPTION}}</p>{{JOIN_LINK}}<span class="join-star" aria-hidden="true">✳</span></div></section>
+    <footer id="lien-he" class="footer"><div class="wrap"><div class="footer-head"><a class="footer-brand" href="#top">OUR<span>STAGE.</span></a><p>{{FOOTER_SLOGAN_1}}<br>{{FOOTER_SLOGAN_2}}</p></div><div class="footer-links"><div class="footer-meta"><span>OUR STAGE CLUB</span><span>FPT UNIVERSITY · CẦN THƠ</span></div><div class="footer-contact">{{CONTACT_LINKS}}</div></div><div class="footer-base"><span>© <span id="year">2026</span> OUR STAGE CLUB</span><span>{{FOOTER_NOTE}}</span><a href="#top">LÊN ĐẦU TRANG ↑</a></div></div></footer>
   </main>
 </body>
 </html>
