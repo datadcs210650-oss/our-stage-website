@@ -44,5 +44,20 @@
   "joinEyebrow": "05 / YOUR NEXT CHAPTER",
   "footerSloganLine1": "CHÚNG TA CÙNG KỂ",
   "footerSloganLine2": "NHỮNG CÂU CHUYỆN.",
-  "customSections": []
+  "customSections": [],
+  "navIntroLabel": "Giới thiệu",
+  "navEventsLabel": "Hoạt động",
+  "navPeopleLabel": "Con người OSC",
+  "navJoinLabel": "Tham gia",
+  "navExtraLabel": "Khám phá thêm",
+  "heroExploreText": "Khám phá câu chuyện",
+  "heroSerial": "OSC — ART IN MOTION",
+  "scrollHint": "SCROLL TO EXPLORE",
+  "programFooterNote": "Mỗi sự kiện là một chương mới trong câu chuyện chung của chúng mình.",
+  "cultureCenter": "OSC",
+  "cultureLabelOne": "ACT",
+  "cultureLabelTwo": "CREATE",
+  "cultureLabelThree": "BELONG",
+  "experienceRightLabel": "OUR STAGE CLUB",
+  "aboutSideLabel": "AN INTRODUCTION"
 }

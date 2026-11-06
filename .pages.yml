@@ -36,6 +36,21 @@ content:
       - { name: contactEmail, label: Email liên hệ, type: string }
       - { name: contactNote, label: Thông báo liên hệ, type: text }
       - { name: footerNote, label: Dòng chân trang, type: string }
+      - { name: navIntroLabel, label: navIntroLabel, type: string }
+      - { name: navEventsLabel, label: navEventsLabel, type: string }
+      - { name: navPeopleLabel, label: navPeopleLabel, type: string }
+      - { name: navJoinLabel, label: navJoinLabel, type: string }
+      - { name: navExtraLabel, label: navExtraLabel, type: string }
+      - { name: heroExploreText, label: heroExploreText, type: string }
+      - { name: heroSerial, label: heroSerial, type: string }
+      - { name: scrollHint, label: scrollHint, type: string }
+      - { name: programFooterNote, label: programFooterNote, type: string }
+      - { name: cultureCenter, label: cultureCenter, type: string }
+      - { name: cultureLabelOne, label: cultureLabelOne, type: string }
+      - { name: cultureLabelTwo, label: cultureLabelTwo, type: string }
+      - { name: cultureLabelThree, label: cultureLabelThree, type: string }
+      - { name: experienceRightLabel, label: experienceRightLabel, type: string }
+      - { name: aboutSideLabel, label: aboutSideLabel, type: string }
       - { name: brandSubtitle, label: brandSubtitle, type: string }
       - { name: headerEdition, label: headerEdition, type: string }
       - { name: marqueeText, label: marqueeText, type: string }

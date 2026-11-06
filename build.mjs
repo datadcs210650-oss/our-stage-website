@@ -35,7 +35,7 @@ const customHTML=customSections.map((sec,i)=>{
     ?'<a class="editorial-chapter__link" href="'+escapeHTML(safeURL(sec.buttonUrl))+'" target="_blank" rel="noopener noreferrer">'+escapeHTML(sec.buttonLabel)+' <span aria-hidden="true">↗</span></a>':"";
   return '<section class="editorial-chapter '+alternate+'" id="'+(i===0?"noi-dung-moi":"bo-sung-"+(i+1))+'"><div class="editorial-chapter__ambient" aria-hidden="true"></div><div class="wrap editorial-chapter__inner"><div class="editorial-chapter__copy"><p class="eyebrow accent">'+escapeHTML(sec.eyebrow||"CÂU CHUYỆN OUR STAGE")+'</p><h2 class="display-heading editorial-chapter__title">'+escapeHTML(sec.title||"")+'</h2><p class="editorial-chapter__body">'+escapeHTML(sec.body||"")+'</p>'+cta+'</div><div class="editorial-chapter__visual">'+(picture?imageTag(picture,sec.title||"Ảnh hoạt động OSC","editorial-chapter__photo"):'<span class="editorial-chapter__sigil" aria-hidden="true">✳</span>')+'</div></div></section>';
 }).join("\n");
-const customNav=customSections.length?'<a href="#noi-dung-moi">Khám phá thêm</a>':"";
+const customNav=customSections.length?'<a href="#noi-dung-moi">'+escapeHTML(site.navExtraLabel||"Khám phá thêm")+'</a>':"";
 const favicon=safeURL(site.logoImage)||"/assets/favicon.svg";
 const faviconType=/\.webp(?:$|\?)/i.test(favicon)?"image/webp":/\.png(?:$|\?)/i.test(favicon)?"image/png":"image/svg+xml";
 const faviconVersion=encodeURIComponent(String(site.logoImage||"fallback")+"-"+String(site.siteTitle||"")).slice(0,120);
@@ -51,6 +51,21 @@ const logoMarkup = logoURL
 const values = {
  SITE_TITLE:escapeHTML(site.siteTitle), SITE_DESCRIPTION:escapeHTML(site.siteDescription), BRAND_MARK:logoMarkup,
  FAVICON_LINK:escapeHTML(faviconHref),FAVICON_TYPE:escapeHTML(faviconType),CUSTOM_SECTIONS:customHTML,CUSTOM_NAV:customNav,
+ NAV_INTRO:escapeHTML(site.navIntroLabel||""),
+ NAV_EVENTS:escapeHTML(site.navEventsLabel||""),
+ NAV_PEOPLE:escapeHTML(site.navPeopleLabel||""),
+ NAV_JOIN:escapeHTML(site.navJoinLabel||""),
+ HERO_EXPLORE_TEXT:escapeHTML(site.heroExploreText||""),
+ HERO_SERIAL:escapeHTML(site.heroSerial||""),
+ SCROLL_HINT:escapeHTML(site.scrollHint||""),
+ PROGRAM_FOOTER_NOTE:escapeHTML(site.programFooterNote||""),
+ CULTURE_CENTER:escapeHTML(site.cultureCenter||""),
+ CULTURE_LABEL_ONE:escapeHTML(site.cultureLabelOne||""),
+ CULTURE_LABEL_TWO:escapeHTML(site.cultureLabelTwo||""),
+ CULTURE_LABEL_THREE:escapeHTML(site.cultureLabelThree||""),
+ EXPERIENCE_RIGHT_LABEL:escapeHTML(site.experienceRightLabel||""),
+ ABOUT_SIDE_LABEL:escapeHTML(site.aboutSideLabel||""),
+ TOTAL_CHAPTERS:String(5+customSections.length).padStart(2,"0"),
  BRAND_SUBTITLE:escapeHTML(site.brandSubtitle||""),
  HEADER_EDITION:escapeHTML(site.headerEdition||""),
  MARQUEE_TEXT:escapeHTML(site.marqueeText||""),
