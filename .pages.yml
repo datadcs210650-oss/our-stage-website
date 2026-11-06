@@ -9,6 +9,8 @@ content:
     type: file
     path: content/site.json
     format: json
+    operations:
+      delete: false
     fields:
       - { name: siteTitle, label: Tiêu đề website (SEO), type: string }
       - { name: siteDescription, label: Mô tả website (SEO), type: text }
@@ -43,8 +45,10 @@ content:
     view:
       primary: title
       fields: [title, category, order]
-      sort: order
-      order: asc
+      sort: [order, title]
+      default:
+        sort: order
+        order: asc
     fields:
       - { name: title, label: Tên sự kiện, type: string, required: true }
       - { name: category, label: Phân loại, type: string }
