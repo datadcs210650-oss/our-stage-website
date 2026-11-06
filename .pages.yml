@@ -1,0 +1,61 @@
+media:
+  input: public/media
+  output: /media
+  rename: safe
+  categories: [image]
+content:
+  - name: homepage
+    label: Trang chủ & giới thiệu
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - { name: siteTitle, label: Tiêu đề website (SEO), type: string }
+      - { name: siteDescription, label: Mô tả website (SEO), type: text }
+      - { name: heroEyebrow, label: Dòng chữ nhỏ đầu trang, type: string }
+      - { name: heroTitleLine1, label: Tiêu đề lớn – dòng 1, type: string }
+      - { name: heroTitleLine2, label: Tiêu đề lớn – dòng 2, type: string }
+      - { name: heroTitleLine3, label: Tiêu đề lớn – dòng 3, type: string }
+      - { name: heroDescription, label: Mô tả phần mở đầu, type: text }
+      - { name: heroImage, label: Ảnh sân khấu đầu trang, type: image }
+      - { name: aboutEyebrow, label: Nhãn phần giới thiệu, type: string }
+      - { name: aboutTitle, label: Tiêu đề giới thiệu, type: string }
+      - { name: aboutDescription, label: Nội dung giới thiệu, type: text }
+      - { name: aboutQuote, label: Trích dẫn nổi bật, type: text }
+      - { name: missionTitle, label: Tiêu đề sứ mệnh, type: string }
+      - { name: missionDescription, label: Mô tả sứ mệnh, type: text }
+      - { name: programTitle, label: Tiêu đề sự kiện, type: string }
+      - { name: programDescription, label: Mô tả sự kiện, type: text }
+      - { name: joinTitle, label: Tiêu đề tham gia OSC, type: string }
+      - { name: joinDescription, label: Nội dung tham gia OSC, type: text }
+      - { name: recruitmentUrl, label: Link tuyển thành viên, type: string }
+      - { name: facebookUrl, label: Facebook chính thức, type: string }
+      - { name: contactEmail, label: Email liên hệ, type: string }
+      - { name: contactNote, label: Thông báo liên hệ, type: text }
+      - { name: footerNote, label: Dòng chân trang, type: string }
+  - name: events
+    label: Sự kiện & hoạt động
+    type: collection
+    path: content/events
+    format: json
+    filename: '{primary}.json'
+    view:
+      primary: title
+      fields: [title, category, order]
+      sort: order
+      order: asc
+    fields:
+      - { name: title, label: Tên sự kiện, type: string, required: true }
+      - { name: category, label: Phân loại, type: string }
+      - { name: description, label: Mô tả, type: text }
+      - { name: image, label: Ảnh sự kiện, type: image }
+      - name: accent
+        label: Màu chủ đề
+        type: select
+        options:
+          values:
+            - { name: red, label: Đỏ sân khấu }
+            - { name: gold, label: Vàng ánh đèn }
+            - { name: violet, label: Tím huyền bí }
+            - { name: blue, label: Xanh ánh sáng }
+      - { name: order, label: Thứ tự hiển thị, type: number }

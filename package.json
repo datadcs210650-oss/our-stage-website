@@ -1,0 +1,9 @@
+{
+  "name": "our-stage-introduction",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Official cinematic introduction website of Our Stage Club",
+  "type": "module",
+  "scripts": { "build": "node build.mjs" },
+  "engines": { "node": ">=18" }
+}
