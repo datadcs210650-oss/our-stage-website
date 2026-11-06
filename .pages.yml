@@ -17,6 +17,7 @@ content:
       - { name: heroTitleLine2, label: Tiêu đề lớn – dòng 2, type: string }
       - { name: heroTitleLine3, label: Tiêu đề lớn – dòng 3, type: string }
       - { name: heroDescription, label: Mô tả phần mở đầu, type: text }
+      - { name: logoImage, label: Logo chính thức của OSC, type: image, description: Tải logo PNG hoặc WebP nền trong suốt }
       - { name: heroImage, label: Ảnh sân khấu đầu trang, type: image }
       - { name: aboutEyebrow, label: Nhãn phần giới thiệu, type: string }
       - { name: aboutTitle, label: Tiêu đề giới thiệu, type: string }
@@ -48,7 +49,16 @@ content:
       - { name: title, label: Tên sự kiện, type: string, required: true }
       - { name: category, label: Phân loại, type: string }
       - { name: description, label: Mô tả, type: text }
-      - { name: image, label: Ảnh sự kiện, type: image }
+      - { name: image, label: Ảnh bìa sự kiện, type: image }
+      - name: gallery
+        label: Album ảnh sự kiện (tối đa 12 ảnh)
+        type: image
+        options:
+          multiple: { max: 12 }
+          extensions: [jpg, jpeg, png, webp, avif]
+      - { name: eventDate, label: Ngày diễn ra, type: string }
+      - { name: location, label: Địa điểm, type: string }
+      - { name: detailsUrl, label: Link thông tin chi tiết, type: string }
       - name: accent
         label: Màu chủ đề
         type: select

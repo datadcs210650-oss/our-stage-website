@@ -1,1 +1,12 @@
-{"title":"CỒN HOA KHÔI","category":"HOVINIGHT · S4","description":"Một đêm diễn nơi sân khấu, tài năng và cảm xúc hòa vào nhau để kể nên câu chuyện riêng của Our Stage.","image":"","accent":"red","order":1}
+{
+  "title": "CỒN HOA KHÔI",
+  "category": "HOVINIGHT · S4",
+  "description": "Một đêm diễn nơi sân khấu, tài năng và cảm xúc hòa vào nhau để kể nên câu chuyện riêng của Our Stage.",
+  "image": "",
+  "accent": "red",
+  "order": 1,
+  "gallery": [],
+  "eventDate": "",
+  "location": "",
+  "detailsUrl": ""
+}
