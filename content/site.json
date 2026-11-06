@@ -1,11 +1,12 @@
 {
-  "siteTitle": "Our Stage | Chúng ta thuộc về sân khấu",
+  "siteTitle": "Our Stage Club",
   "siteDescription": "Our Stage – câu lạc bộ nghệ thuật sân khấu tại FPT University Cần Thơ. Khám phá những câu chuyện, vở diễn và hành trình của chúng mình.",
   "heroEyebrow": "FPT UNIVERSITY CẦN THƠ · OUR STAGE CLUB",
   "heroTitleLine1": "CHÚNG TA",
   "heroTitleLine2": "THUỘC VỀ",
   "heroTitleLine3": "SÂN KHẤU.",
   "heroDescription": "Có những câu chuyện chỉ thật sự bắt đầu khi ánh đèn sân khấu bật sáng.",
+  "logoImage": "/media/logo-osc.png",
   "heroImage": "",
   "aboutEyebrow": "01 / CHÚNG MÌNH LÀ AI",
   "aboutTitle": "MỘT SÂN KHẤU. VÔ VÀN CÂU CHUYỆN.",
@@ -21,6 +22,5 @@
   "facebookUrl": "",
   "contactEmail": "",
   "contactNote": "Thông tin tuyển thành viên và liên hệ chính thức sẽ được Ban Chủ nhiệm cập nhật tại đây.",
-  "footerNote": "Made for the stories we dare to tell.",
-  "logoImage": "/media/logo-osc.png"
+  "footerNote": "Made for the stories we dare to tell."
 }
