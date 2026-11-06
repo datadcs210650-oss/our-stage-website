@@ -1,7 +1,16 @@
 {
   "name": "our-stage-website",
+  "main": "./worker.js",
   "compatibility_date": "2026-11-06",
   "assets": {
-    "directory": "./dist"
-  }
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "kv_namespaces": [
+    {
+      "binding": "OSC_CONTENT",
+      "id": "b7f4b648dfb945cbb5f20852bc956b10"
+    }
+  ]
 }
