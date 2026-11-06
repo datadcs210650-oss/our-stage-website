@@ -5,8 +5,9 @@
   "description": "Official cinematic introduction website of Our Stage Club",
   "type": "module",
   "scripts": {
-    "build": "node build.mjs",
-    "deploy": "npm run build && wrangler deploy"
+    "build": "npm run test && node build.mjs",
+    "deploy": "npm run build && wrangler deploy",
+    "test": "node --test tests/*.test.mjs"
   },
   "engines": {
     "node": ">=18"
