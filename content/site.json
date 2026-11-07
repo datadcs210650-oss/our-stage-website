@@ -46,7 +46,7 @@
   "footerSloganLine2": "NHỮNG CÂU CHUYỆN.",
   "navIntroLabel": "Giới thiệu",
   "navEventsLabel": "Hoạt động",
-  "navPeopleLabel": "BAN CHỦ NHIỆM",
+  "navPeopleLabel": "Our Stage",
   "navJoinLabel": "Tham gia",
   "navExtraLabel": "Khám phá thêm",
   "heroExploreText": "Khám phá câu chuyện",
@@ -59,7 +59,6 @@
   "cultureLabelThree": "BELONG",
   "experienceRightLabel": "OUR STAGE CLUB",
   "aboutSideLabel": "AN INTRODUCTION",
-  "customSections": [],
   "boardEnabled": true,
   "boardNavLabel": "Ban Chủ nhiệm",
   "boardEyebrow": "NHỮNG NGƯỜI GIỮ LỬA · FA26",
@@ -91,5 +90,6 @@
       "image": "",
       "description": ""
     }
-  ]
+  ],
+  "customSections": []
 }
