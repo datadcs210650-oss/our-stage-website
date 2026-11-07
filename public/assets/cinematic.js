@@ -51,5 +51,48 @@ addEventListener("scroll",schedule,{passive:true});
 addEventListener("resize",schedule,{passive:true});
 reduce.addEventListener?.("change",schedule);
 coarse.addEventListener?.("change",schedule);
+
+// Leadership cards: staggered scroll reveal with interactive portrait lighting,
+// without interfering with touch gestures or reduced-motion preferences.
+const board=document.querySelector(".leadership-section");
+if(board){
+ const cards=[...board.querySelectorAll("[data-board-reveal]")];
+ const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)");
+ const finePointer=window.matchMedia("(hover: hover) and (pointer: fine)");
+ if(!reducedMotion.matches&&"IntersectionObserver" in window){
+  board.classList.add("board-enhanced");
+  const cardObserver=new IntersectionObserver(entries=>{
+   for(const entry of entries)if(entry.isIntersecting){
+    entry.target.classList.add("board-visible");
+    cardObserver.unobserve(entry.target);
+   }
+  },{threshold:.1,rootMargin:"0px 0px -18px 0px"});
+  cards.forEach(card=>cardObserver.observe(card));
+ }
+ if(!reducedMotion.matches&&finePointer.matches){
+  cards.forEach(card=>{
+   const photo=card.querySelector(".board-photo-wrap");
+   if(!photo)return;
+   let queued=false,x=.5,y=.5;
+   card.addEventListener("pointermove",event=>{
+    const box=photo.getBoundingClientRect();
+    x=Math.max(0,Math.min(1,(event.clientX-box.left)/Math.max(1,box.width)));
+    y=Math.max(0,Math.min(1,(event.clientY-box.top)/Math.max(1,box.height)));
+    if(!queued){queued=true;requestAnimationFrame(()=>{
+     queued=false;
+     photo.style.setProperty("--portrait-x",(x*100).toFixed(1)+"%");
+     photo.style.setProperty("--portrait-y",(y*100).toFixed(1)+"%");
+     photo.style.setProperty("--board-tilt",((x-.5)*5).toFixed(2)+"deg");
+    })}
+   },{passive:true});
+   card.addEventListener("pointerleave",()=>{
+    photo.style.setProperty("--portrait-x","50%");
+    photo.style.setProperty("--portrait-y","48%");
+    photo.style.setProperty("--board-tilt","0deg");
+   });
+  });
+ }
+}
+
 schedule();
 })();
