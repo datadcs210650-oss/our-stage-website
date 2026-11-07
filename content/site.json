@@ -44,10 +44,9 @@
   "joinEyebrow": "05 / YOUR NEXT CHAPTER",
   "footerSloganLine1": "CHÚNG TA CÙNG KỂ",
   "footerSloganLine2": "NHỮNG CÂU CHUYỆN.",
-  "customSections": [],
   "navIntroLabel": "Giới thiệu",
   "navEventsLabel": "Hoạt động",
-  "navPeopleLabel": "Con người OSC",
+  "navPeopleLabel": "BAN CHỦ NHIỆM",
   "navJoinLabel": "Tham gia",
   "navExtraLabel": "Khám phá thêm",
   "heroExploreText": "Khám phá câu chuyện",
@@ -59,5 +58,6 @@
   "cultureLabelTwo": "CREATE",
   "cultureLabelThree": "BELONG",
   "experienceRightLabel": "OUR STAGE CLUB",
-  "aboutSideLabel": "AN INTRODUCTION"
+  "aboutSideLabel": "AN INTRODUCTION",
+  "customSections": []
 }
