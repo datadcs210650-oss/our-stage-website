@@ -36,6 +36,21 @@ content:
       - { name: contactEmail, label: Email liên hệ, type: string }
       - { name: contactNote, label: Thông báo liên hệ, type: text }
       - { name: footerNote, label: Dòng chân trang, type: string }
+      - { name: boardEnabled, label: Hiện mục Ban Chủ nhiệm, type: boolean }
+      - { name: boardNavLabel, label: Tên menu Ban Chủ nhiệm, type: string }
+      - { name: boardEyebrow, label: Nhãn Ban Chủ nhiệm, type: string }
+      - { name: boardTitle, label: Tiêu đề Ban Chủ nhiệm, type: string }
+      - { name: boardDescription, label: Mô tả Ban Chủ nhiệm, type: text }
+      - { name: boardTerm, label: Nhiệm kỳ, type: string }
+      - name: boardMembers
+        label: Thành viên Ban Chủ nhiệm
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Họ và tên, type: string, required: true }
+          - { name: role, label: Chức vụ, type: string, required: true }
+          - { name: image, label: Ảnh chân dung, type: image }
+          - { name: description, label: Giới thiệu ngắn, type: text }
       - { name: navIntroLabel, label: navIntroLabel, type: string }
       - { name: navEventsLabel, label: navEventsLabel, type: string }
       - { name: navPeopleLabel, label: navPeopleLabel, type: string }

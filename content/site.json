@@ -59,5 +59,37 @@
   "cultureLabelThree": "BELONG",
   "experienceRightLabel": "OUR STAGE CLUB",
   "aboutSideLabel": "AN INTRODUCTION",
-  "customSections": []
+  "customSections": [],
+  "boardEnabled": true,
+  "boardNavLabel": "Ban Chủ nhiệm",
+  "boardEyebrow": "NHỮNG NGƯỜI GIỮ LỬA · FA26",
+  "boardTitle": "BAN CHỦ NHIỆM",
+  "boardDescription": "Những người cùng giữ nhịp, kết nối đam mê và dẫn dắt Our Stage qua từng mùa sân khấu.",
+  "boardTerm": "NHIỆM KỲ FA26",
+  "boardMembers": [
+    {
+      "name": "Âu Đức Đạt",
+      "role": "Chủ tịch",
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "Đào Thị Mỹ Hoa",
+      "role": "Phó Chủ tịch",
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "Trần Huỳnh Hoàng Duyên",
+      "role": "Phó Chủ tịch",
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "Minh Hy",
+      "role": "Thư ký",
+      "image": "",
+      "description": ""
+    }
+  ]
 }

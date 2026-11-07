@@ -40,6 +40,34 @@ const favicon=safeURL(site.logoImage)||"/assets/favicon.svg";
 const faviconType=/\.webp(?:$|\?)/i.test(favicon)?"image/webp":/\.png(?:$|\?)/i.test(favicon)?"image/png":"image/svg+xml";
 const faviconVersion=encodeURIComponent(String(site.logoImage||"fallback")+"-"+String(site.siteTitle||"")).slice(0,120);
 const faviconHref=favicon+(favicon.includes("?")?"&":"?")+"v="+faviconVersion;
+// Board of Directors is editable from OSC Manager; unknown photos display a graphic
+// placeholder instead of implying a real portrait.
+const showBoard=site.boardEnabled!==false;
+const boardNav=showBoard?'<a href="#ban-chu-nhiem">'+escapeHTML(site.boardNavLabel||"Ban Chủ nhiệm")+'</a>':"";
+const boardMembers=(Array.isArray(site.boardMembers)?site.boardMembers:[])
+ .filter(p=>p&&typeof p==="object"&&String(p.name||"").trim()).slice(0,12);
+const boardCards=boardMembers.map((p,i)=>{
+ const name=String(p.name||"").trim(),role=String(p.role||"").trim();
+ const portrait=safeURL(p.image||"");
+ const initials=name.split(/\s+/).slice(-2).map(s=>s.charAt(0).toLocaleUpperCase("vi-VN")).join("");
+ const image=portrait
+  ?'<img class="board-portrait" src="'+escapeHTML(portrait)+'" alt="Ảnh chân dung '+escapeHTML(name)+'" loading="lazy" decoding="async" width="520" height="650">'
+  :'<div class="board-avatar-fallback" aria-label="Chưa có ảnh chân dung"><span aria-hidden="true">'+escapeHTML(initials||"OSC")+'</span><small aria-hidden="true">OUR STAGE</small></div>';
+ const desc=p.description?'<p class="board-card-bio">'+escapeHTML(p.description)+'</p>':"";
+ return '<article class="board-card'+(i===0?" board-card--lead":"")+'" data-board-reveal style="--board-order:'+i+'">'+
+  '<div class="board-photo-wrap">'+image+'<span class="board-photo-glow" aria-hidden="true"></span><span class="board-card-number" aria-hidden="true">'+String(i+1).padStart(2,"0")+'</span></div>'+
+  '<div class="board-card-info"><p class="board-card-role">'+escapeHTML(role)+'</p><h3>'+escapeHTML(name)+'</h3>'+desc+'</div>'+
+  '</article>';
+}).join("\n");
+const boardSection=showBoard?'<section class="leadership-section" id="ban-chu-nhiem" aria-labelledby="board-heading">'+
+ '<div class="leadership-ambient" aria-hidden="true"></div><div class="wrap">'+
+ '<div class="leadership-header"><div><p class="eyebrow accent">'+escapeHTML(site.boardEyebrow||"BAN CHỦ NHIỆM")+'</p>'+
+ '<h2 id="board-heading" class="leadership-heading">'+escapeHTML(site.boardTitle||"BAN CHỦ NHIỆM")+'</h2></div>'+
+ '<div class="leadership-header-aside"><p>'+escapeHTML(site.boardDescription||"")+'</p><span>'+escapeHTML(site.boardTerm||"")+'</span></div></div>'+
+ '<div class="board-grid">'+boardCards+'</div>'+
+ '<p class="leadership-caption"><span aria-hidden="true">✳</span> NHỮNG CON NGƯỜI PHÍA SAU ÁNH ĐÈN SÂN KHẤU</p>'+
+ '</div></section>':"";
+
 const socials = [];
 if (safeURL(site.facebookUrl)) socials.push('<a href="' + escapeHTML(site.facebookUrl) + '" target="_blank" rel="noopener noreferrer">Facebook ↗</a>');
 if (safeEmail(site.contactEmail)) socials.push('<a href="mailto:' + escapeHTML(site.contactEmail) + '">' + escapeHTML(site.contactEmail) + ' ↗</a>');
@@ -50,7 +78,7 @@ const logoMarkup = logoURL
   : '<span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>';
 const values = {
  SITE_TITLE:escapeHTML(site.siteTitle), SITE_DESCRIPTION:escapeHTML(site.siteDescription), BRAND_MARK:logoMarkup,
- FAVICON_LINK:escapeHTML(faviconHref),FAVICON_TYPE:escapeHTML(faviconType),CUSTOM_SECTIONS:customHTML,CUSTOM_NAV:customNav,
+ FAVICON_LINK:escapeHTML(faviconHref),FAVICON_TYPE:escapeHTML(faviconType),CUSTOM_SECTIONS:customHTML,CUSTOM_NAV:customNav,BOARD_SECTION:boardSection,BOARD_NAV:boardNav,
  NAV_INTRO:escapeHTML(site.navIntroLabel||""),
  NAV_EVENTS:escapeHTML(site.navEventsLabel||""),
  NAV_PEOPLE:escapeHTML(site.navPeopleLabel||""),
@@ -65,7 +93,7 @@ const values = {
  CULTURE_LABEL_THREE:escapeHTML(site.cultureLabelThree||""),
  EXPERIENCE_RIGHT_LABEL:escapeHTML(site.experienceRightLabel||""),
  ABOUT_SIDE_LABEL:escapeHTML(site.aboutSideLabel||""),
- TOTAL_CHAPTERS:String(5+customSections.length).padStart(2,"0"),
+ TOTAL_CHAPTERS:String(5+customSections.length+(showBoard?1:0)).padStart(2,"0"),
  BRAND_SUBTITLE:escapeHTML(site.brandSubtitle||""),
  HEADER_EDITION:escapeHTML(site.headerEdition||""),
  MARQUEE_TEXT:escapeHTML(site.marqueeText||""),
