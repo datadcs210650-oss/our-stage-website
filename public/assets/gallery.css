@@ -16,3 +16,6 @@
 .osc-lightbox-close{position:absolute;right:14px;bottom:13px;border:0;background:#e24e3d;color:#fff;border-radius:50%;height:33px;width:33px;cursor:pointer;font-size:19px}
 @media(max-width:740px){.brand-logo{width:34px;height:34px;max-width:34px;max-height:34px}.event-gallery-thumb{width:59px;height:59px}}
 @media(prefers-reduced-motion:reduce){.event-gallery-thumb,.event-gallery-image{transition:none!important;transform:none!important}}
+/* Keep every album thumbnail uncropped as well; the lightbox already uses contain. */
+.event-gallery-image{object-fit:contain;background:#1c1118}
+.event-gallery-thumb:hover .event-gallery-image{transform:none}

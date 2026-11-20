@@ -177,3 +177,41 @@ body{background:var(--cinema-dark)}
  .board-avatar-fallback:before{animation:none!important}
  .board-photo-wrap,.board-portrait,.board-photo-wrap:after{transition:none!important}
 }
+
+
+/* OSC 2026 — poster-first activity gallery.
+   The actual image controls its display ratio: never crop portrait or landscape covers. */
+.show-art--photo,
+.show-card--featured .show-art--photo{
+  display:flex;align-items:center;justify-content:center;position:relative;
+  height:auto;min-height:0;max-height:none;overflow:hidden;
+  padding:clamp(5px,1.2vw,14px);border:1px solid #e9a8a42b;
+  background:radial-gradient(ellipse at 50% 40%,#52212a,#1d1019 70%,#100d12);
+}
+.show-art--photo .show-photo{
+  position:relative;inset:auto;z-index:3;display:block;
+  width:auto;height:auto;max-width:100%;max-height:min(79vh,800px);
+  object-fit:contain;object-position:center;
+  box-shadow:0 20px 70px #050205a6;
+  transition:filter .35s ease;transform:none;
+}
+.show-card:hover .show-art--photo .show-photo{transform:none;filter:brightness(1.045)}
+.show-art--photo .art-rim,.show-art--photo .art-orb,
+.show-art--photo .art-flare,.show-art--photo .art-watermark{opacity:.14;pointer-events:none}
+.show-art--photo::after{background:none}
+.show-cover-open{
+  position:absolute;z-index:9;right:clamp(13px,2vw,24px);bottom:clamp(13px,2vw,24px);
+  border:1px solid #fff8;background:#1c0d17df;color:#fff4ed;cursor:zoom-in;
+  border-radius:999px;padding:10px 15px;font:750 11px/1.4 "Be Vietnam Pro",sans-serif;
+  letter-spacing:.03em;backdrop-filter:blur(12px);transition:background .2s,transform .2s;
+}
+.show-cover-open:hover,.show-cover-open:focus-visible{background:#aa3e4b;transform:translateY(-2px)}
+.show-cover-open span{font-size:17px;margin-right:6px;vertical-align:-1px}
+@media(max-width:760px){
+  .show-art--photo,.show-card--featured .show-art--photo{padding:7px}
+  .show-art--photo .show-photo{max-height:min(74vh,680px)}
+  .show-cover-open{font-size:10px;padding:9px 12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .show-art--photo .show-photo,.show-cover-open{transition:none!important}
+}

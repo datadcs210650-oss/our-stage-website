@@ -14,6 +14,9 @@ const cards = events.map((e,i) => {
   const accent = ["red","gold","violet","blue"].includes(e.accent) ? e.accent : "red";
   const cover = safeURL(e.image);
   const gallery = (Array.isArray(e.gallery) ? e.gallery : []).map(safeURL).filter(Boolean).slice(0,12);
+  const coverOpen = cover
+    ? '<button type="button" class="show-cover-open" data-osc-image="'+escapeHTML(cover)+'" data-osc-alt="'+escapeHTML(e.title+' – ảnh bìa')+'" aria-label="Xem nguyên ảnh bìa của '+escapeHTML(e.title)+'"><span aria-hidden="true">↗</span> Xem ảnh nguyên khổ</button>'
+    : '';
   const photos = gallery.length
     ? '<div class="event-gallery" role="group" aria-label="Album ảnh '+escapeHTML(e.title)+'">'+gallery.map((src,j) =>
        '<button class="event-gallery-thumb" type="button" data-osc-image="'+escapeHTML(src)+'" data-osc-alt="'+escapeHTML(e.title)+' – ảnh '+(j+1)+'" aria-label="Xem ảnh '+(j+1)+' của '+escapeHTML(e.title)+'">'+imageTag(src,e.title+" – ảnh "+(j+1),"event-gallery-image")+'</button>'
@@ -21,8 +24,8 @@ const cards = events.map((e,i) => {
     : '';
   const meta = [e.eventDate, e.location].filter(Boolean).map(escapeHTML).join(" · ");
   const details = safeURL(e.detailsUrl) ? '<a class="event-detail-link" href="'+escapeHTML(safeURL(e.detailsUrl))+'" rel="noopener noreferrer" target="_blank">Xem thông tin sự kiện ↗</a>' : '';
-  return '<article class="show-card reveal' + (e.pinned && i===0 ? " show-card--featured" : "") + '" tabindex="0"><div class="show-art show-art--' + accent + '">' + (e.pinned ? '<span class="pin-label">✦ ĐƯỢC GHIM</span>' : "") +
-  imageTag(cover,e.title,"show-photo") + '<span class="art-rim"></span><span class="art-orb"></span><span class="art-flare"></span><span class="art-watermark" aria-hidden="true">' + String(i+1).padStart(2,"0") + '</span></div>' +
+  return '<article class="show-card reveal' + (e.pinned && i===0 ? " show-card--featured" : "") + '" tabindex="0"><div class="show-art show-art--' + accent + (cover ? ' show-art--photo' : '') + '">' + (e.pinned ? '<span class="pin-label">✦ ĐƯỢC GHIM</span>' : "") +
+  imageTag(cover,e.title,"show-photo") + coverOpen + '<span class="art-rim"></span><span class="art-orb"></span><span class="art-flare"></span><span class="art-watermark" aria-hidden="true">' + String(i+1).padStart(2,"0") + '</span></div>' +
   '<div class="show-details"><span class="micro-label">' + escapeHTML(e.category) + '</span><span class="show-index">' + String(i+1).padStart(2,"0") + ' / ' + String(events.length).padStart(2,"0") + '</span></div>' +
   '<h3>' + escapeHTML(e.title) + '</h3><p>' + escapeHTML(e.description) + '</p>' +
   (meta ? '<div class="event-meta">'+meta+'</div>' : '') + photos + details + '</article>';
