@@ -1,5 +1,5 @@
 {
-  "title": "CỒN HOA KHÔI",
+  "title": "HOVINIGHT SEASON 4: CỒN HOA KHÔI",
   "category": "HOVINIGHT · S4",
   "description": "Một đêm diễn nơi sân khấu, tài năng và cảm xúc hòa vào nhau để kể nên câu chuyện riêng của Our Stage.",
   "image": "/media/1793971865866-8474f2e4781a3e27.webp",
@@ -8,5 +8,7 @@
   "location": "Hội trường Alpha, Trường Đại học FPT Cần Thơ",
   "detailsUrl": "https://www.facebook.com/share/p/1CBTFyaCHU/",
   "accent": "red",
-  "order": 1
+  "order": 1,
+  "pinned": false,
+  "updatedAt": "2026-11-20T12:59:43.848Z"
 }
