@@ -215,3 +215,40 @@ body{background:var(--cinema-dark)}
 @media(prefers-reduced-motion:reduce){
   .show-art--photo .show-photo,.show-cover-open{transition:none!important}
 }
+
+
+/* Responsive pass: touchscreen navigation, safe areas and landscape devices. */
+@media screen and (max-width:1000px){
+ .site-header{padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right));gap:12px}
+ .header-right{flex-shrink:0}
+ .menu-toggle{display:block;min-width:44px;min-height:44px}
+ .main-nav{display:none;position:fixed;top:65px;left:0;right:0;max-height:calc(100dvh - 65px);overflow-y:auto;overscroll-behavior:contain;background:#100b0f;padding:12px 24px 24px;flex-direction:column;align-items:stretch;gap:0}
+ .main-nav.is-open{display:flex}
+ .main-nav a{min-height:44px;display:flex;align-items:center;padding:12px 0;border-bottom:1px solid #ffffff1a}
+ .nav-open{overflow:hidden}
+ .hero-title,.display-heading,.join-title,.leadership-heading{overflow-wrap:break-word}
+ .show-grid>* ,.board-grid>* ,.about-grid>*{min-width:0}
+ .footer-contact a{overflow-wrap:anywhere}
+}
+@media screen and (max-width:600px){
+ .hero{min-height:max(560px,100svh);height:auto;max-height:none}
+ .hero-inner{padding-top:clamp(108px,18vh,150px);padding-bottom:108px}
+ .hero-title{font-size:clamp(36px,10.8vw,67px)}
+ .hero-title span{max-width:100%}
+ .display-heading,.section-header .display-heading,.leadership-heading{font-size:clamp(35px,10vw,62px)}
+ .experience-title{font-size:clamp(36px,10.5vw,68px)}
+ .experience-texts{height:clamp(150px,38vw,215px)}
+ .footer-brand{font-size:clamp(40px,13vw,80px)}
+ .show-cover-open,.osc-lightbox-close{min-height:44px;min-width:44px}
+ .osc-lightbox{max-height:90dvh;overflow:auto}
+ .osc-lightbox-media{max-height:calc(88dvh - 76px)}
+}
+@media screen and (orientation:landscape) and (max-height:540px){
+ .hero{min-height:540px;height:auto}
+ .hero-inner{padding-top:110px;padding-bottom:90px}
+ .experience-sticky{min-height:0;height:100svh}
+ .experience-content{padding-top:75px;padding-bottom:16px}
+ .experience-title{font-size:clamp(29px,8vh,56px)}
+ .experience-texts{height:35vh}
+}
+@media(pointer:coarse){.menu-toggle,.show-cover-open,.osc-lightbox-close,.event-gallery-thumb{touch-action:manipulation}}
