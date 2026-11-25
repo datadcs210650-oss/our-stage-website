@@ -3,9 +3,10 @@
 ::selection{background:#ee745c;color:#120b0e}
 html{scroll-padding-top:88px}
 body{background:var(--cinema-dark)}
-.brand-logo{transition:transform .6s var(--cinema-ease),filter .6s var(--cinema-ease);filter:drop-shadow(0 0 14px #e8675038)}
-.brand:hover .brand-logo{transform:rotate(-7deg) scale(1.1);filter:drop-shadow(0 0 23px #ec836a83)}
-.brand-logo{object-fit:contain;aspect-ratio:1}
+.brand-logo{display:block;flex:0 0 48px;width:48px;height:48px;box-sizing:border-box;background:#fff;border-radius:12px;padding:0;margin:0;object-fit:contain;object-position:center;transition:box-shadow .4s var(--cinema-ease);transform:none;box-shadow:0 4px 18px #110b0a38}
+.brand:hover .brand-logo{transform:none;box-shadow:0 4px 20px #ec836a55}
+.brand-logo{object-fit:contain;object-position:center;aspect-ratio:1}
+@media(max-width:740px){.brand-logo{width:40px;height:40px;flex-basis:40px;border-radius:10px}}
 .site-header{--nav-progress:0}
 .site-header:before{content:"";position:absolute;inset:auto 0 0;height:1px;background:linear-gradient(90deg,#dd634b,#ffc99b);transform:scaleX(var(--nav-progress));transform-origin:left;pointer-events:none;opacity:.8}
 .hero-inner{transform:translateY(var(--hero-stage-shift,0px));transition:transform .12s linear}
