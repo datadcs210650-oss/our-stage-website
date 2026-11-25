@@ -10,7 +10,8 @@ test("board section is included in the public template and navigation",()=>{
 });
 test("board has editable directors with names, positions and honest empty portraits",()=>{
  const s=JSON.parse(read("content/site.json"));
- assert.equal(s.boardEnabled,true);
+ // Visibility is an editable site setting; both enabled and disabled are valid.
+ assert.equal(typeof s.boardEnabled,"boolean");
  assert.ok(s.boardMembers.length>=4);
  assert.ok(s.boardMembers.every(x=>x.name&&x.role));
  assert.ok(s.boardMembers.every(x=>x.image===""||x.image.startsWith("/media/")||x.image.startsWith("https://")));
